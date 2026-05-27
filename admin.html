@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — MIZAKI Encuesta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body class="admin-body">
+  <div class="admin-container">
+
+    <header class="admin-header">
+      <div class="logo-wrapper logo-wrapper--small">
+        <img src="assets/logo.png" alt="MIZAKI" class="logo logo--small">
+      </div>
+      <h1 class="admin-title">Panel de Resultados</h1>
+      <button id="logout-btn" class="btn-logout">Cerrar sesión</button>
+    </header>
+
+    <div id="loading" class="loading-state">Cargando datos...</div>
+    <div id="error-state" class="error-state" style="display:none">
+      Error al cargar datos. Verifica la URL del Apps Script en admin.js.
+    </div>
+
+    <div id="dashboard" style="display:none">
+
+      <!-- Stats -->
+      <div class="stats-bar">
+        <div class="stat-card">
+          <span class="stat-value" id="total-responses">—</span>
+          <span class="stat-label">Total respuestas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="week-responses">—</span>
+          <span class="stat-label">Esta semana</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="avg-nps">—</span>
+          <span class="stat-label">NPS promedio</span>
+        </div>
+      </div>
+
+      <!-- Filter -->
+      <div class="filter-bar">
+        <label for="branch-filter">Sucursal:</label>
+        <select id="branch-filter" class="branch-select">
+          <option value="all">Todas</option>
+          <option value="La Campiña">La Campiña</option>
+          <option value="Ibero">Ibero</option>
+          <option value="Plaza Norte">Plaza Norte</option>
+        </select>
+      </div>
+
+      <!-- View toggle -->
+      <div class="view-toggle">
+        <button class="toggle-btn active" id="btn-summary" onclick="showView('summary')">Resumen</button>
+        <button class="toggle-btn" id="btn-detail" onclick="showView('detail')">Detalle</button>
+      </div>
+
+      <!-- Summary view -->
+      <div id="view-summary">
+        <div class="charts-grid">
+          <div class="chart-card">
+            <h3>Promedios de calificación</h3>
+            <canvas id="avgChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>Frecuencia de visitas</h3>
+            <canvas id="visitsChart"></canvas>
+          </div>
+        </div>
+        <div class="comments-card">
+          <h3>Últimos comentarios</h3>
+          <ul id="comments-list" class="comments-list"></ul>
+        </div>
+      </div>
+
+      <!-- Detail view -->
+      <div id="view-detail" style="display:none">
+        <div class="table-wrapper">
+          <table id="responses-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Sucursal</th>
+                <th>Visitas</th>
+                <th>Espera</th>
+                <th>Personal</th>
+                <th>Ambiente</th>
+                <th>Sabor</th>
+                <th>Porción</th>
+                <th>Precios</th>
+                <th>NPS</th>
+                <th>Comentario</th>
+              </tr>
+            </thead>
+            <tbody id="responses-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div><!-- /#dashboard -->
+  </div><!-- /.admin-container -->
+
+  <script src="assets/admin.js"></script>
+</body>
+</html>
