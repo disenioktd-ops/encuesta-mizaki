@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\Richi\\\\Desktop\\\\ENCUESTA CLIENTES\\\\docs\\\\superpowers\\\\specs\")",
-      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\Richi\\\\Desktop\\\\ENCUESTA CLIENTES\\\\docs\\\\superpowers\\\\specs\")"
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\Richi\\\\Desktop\\\\ENCUESTA CLIENTES\\\\docs\\\\superpowers\\\\specs\")",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(dir /s *.html)",
+      "Bash(Get-ChildItem -Recurse -Include *.html)"
     ]
   }
 }
