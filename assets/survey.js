@@ -74,7 +74,6 @@ document.getElementById('survey-form').addEventListener('submit', async e => {
     [data.nps,       'Indica qué tan probable es que nos recomiendes'],
   ];
 
-  const errorEl = document.getElementById('error-msg');
   const failed = required.find(([val]) => !val);
   if (failed) {
     errorEl.textContent = failed[1];
