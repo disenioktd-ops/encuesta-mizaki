@@ -40,10 +40,7 @@ body {
 }
 
 .logo-wrapper {
-  background: #fff;
   display: inline-block;
-  padding: 16px 24px;
-  border-radius: var(--radius);
   margin-bottom: 20px;
 }
 
@@ -263,7 +260,7 @@ body {
   margin-bottom: 24px;
 }
 
-.logo-wrapper--small { padding: 8px 12px; }
+.logo-wrapper--small { padding: 0; }
 .logo--small { height: 36px; }
 
 .admin-title { flex: 1; font-size: 1.25rem; font-weight: 700; }
