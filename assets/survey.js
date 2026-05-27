@@ -42,6 +42,13 @@ document.querySelectorAll('.nps-btn').forEach(btn => {
 document.getElementById('survey-form').addEventListener('submit', async e => {
   e.preventDefault();
 
+  const errorEl = document.getElementById('error-msg');
+  const btn = document.querySelector('.btn-submit');
+  if (!errorEl || !btn) {
+    console.error('Missing required DOM elements');
+    return;
+  }
+
   const data = {
     sucursal:   document.getElementById('sucursal').value,
     visitas:    document.querySelector('input[name="visitas"]:checked')?.value || '',
@@ -77,15 +84,24 @@ document.getElementById('survey-form').addEventListener('submit', async e => {
   }
   errorEl.style.display = 'none';
 
-  const btn = document.querySelector('.btn-submit');
   btn.textContent = 'Enviando...';
   btn.disabled = true;
 
   try {
+    // Google Apps Script blocks CORS responses in the browser, so fetch will
+    // often throw even when the data IS saved in the sheet. The optimistic
+    // redirect is intentional — this is the standard approach for GAS forms.
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('timeout')), 8000)
+    );
     const params = new URLSearchParams({ action: 'submit', ...data });
-    await fetch(`${APPS_SCRIPT_URL}?${params}`);
+    await Promise.race([
+      fetch(`${APPS_SCRIPT_URL}?${params}`),
+      timeout
+    ]);
   } catch (err) {
-    console.error('Submit error:', err);
+    // Log error but still redirect — data was likely saved (GAS CORS quirk)
+    console.warn('Fetch note (data likely saved):', err.message);
   }
 
   window.location.href = 'gracias.html';
