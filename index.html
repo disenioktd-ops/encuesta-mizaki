@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Encuesta de Calidad — MIZAKI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="survey-container">
+
+    <header class="survey-header">
+      <div class="logo-wrapper">
+        <img src="assets/logo.png" alt="MIZAKI Restaurante Fusión Japonesa" class="logo">
+      </div>
+      <p class="tagline">Cuéntanos tu experiencia</p>
+    </header>
+
+    <main>
+      <form id="survey-form" novalidate>
+
+        <!-- Sucursal -->
+        <div class="form-group">
+          <label class="question-label">¿En qué sucursal estuviste?</label>
+          <div class="pill-group" id="sucursal-group">
+            <button type="button" class="pill" data-value="La Campiña">La Campiña</button>
+            <button type="button" class="pill" data-value="Ibero">Ibero</button>
+            <button type="button" class="pill" data-value="Plaza Norte">Plaza Norte</button>
+          </div>
+          <input type="hidden" id="sucursal">
+        </div>
+
+        <!-- P1: Visitas -->
+        <div class="form-group">
+          <label class="question-label">1. ¿Cuántas veces nos has visitado?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="visitas" value="Primera vez">
+              <span class="radio-custom"></span>
+              <span class="radio-text">Primera vez</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="visitas" value="De 2 a 5 veces">
+              <span class="radio-custom"></span>
+              <span class="radio-text">De 2 a 5 veces</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="visitas" value="Más de 5 veces">
+              <span class="radio-custom"></span>
+              <span class="radio-text">Más de 5 veces</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- P2–P7: Estrellas -->
+        <div class="form-group">
+          <label class="question-label">Califica del 1 al 5:</label>
+          <p class="hint">1 = Muy malo &nbsp;•&nbsp; 5 = Muy bueno</p>
+
+          <div class="rating-row">
+            <span class="rating-label">2. Tiempo de espera</span>
+            <div class="stars" data-field="espera">
+              <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span><span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+          <input type="hidden" id="espera">
+
+          <div class="rating-row">
+            <span class="rating-label">3. Atención del personal</span>
+            <div class="stars" data-field="personal">
+              <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span><span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+          <input type="hidden" id="personal">
+
+          <div class="rating-row">
+            <span class="rating-label">4. Ambiente (música, iluminación, temperatura)</span>
+            <div class="stars" data-field="ambiente">
+              <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span><span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+          <input type="hidden" id="ambiente">
+
+          <div class="rating-row">
+            <span class="rating-label">5. Sabor y calidad de los alimentos</span>
+            <div class="stars" data-field="sabor">
+              <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span><span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+          <input type="hidden" id="sabor">
+
+          <div class="rating-row">
+            <span class="rating-label">6. Tamaño de la porción</span>
+            <div class="stars" data-field="porcion">
+              <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span><span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+          <input type="hidden" id="porcion">
+
+          <div class="rating-row">
+            <span class="rating-label">7. Precios de los alimentos</span>
+            <div class="stars" data-field="precios">
+              <span class="star" data-value="1">★</span><span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span><span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+          </div>
+          <input type="hidden" id="precios">
+        </div>
+
+        <!-- P8: NPS -->
+        <div class="form-group">
+          <label class="question-label">8. ¿Qué tan probable es que recomiendes MIZAKI a tus conocidos?</label>
+          <p class="hint">1 = Nada probable &nbsp;•&nbsp; 10 = Muy probable</p>
+          <div class="nps-grid">
+            <button type="button" class="nps-btn" data-value="1">1</button>
+            <button type="button" class="nps-btn" data-value="2">2</button>
+            <button type="button" class="nps-btn" data-value="3">3</button>
+            <button type="button" class="nps-btn" data-value="4">4</button>
+            <button type="button" class="nps-btn" data-value="5">5</button>
+            <button type="button" class="nps-btn" data-value="6">6</button>
+            <button type="button" class="nps-btn" data-value="7">7</button>
+            <button type="button" class="nps-btn" data-value="8">8</button>
+            <button type="button" class="nps-btn" data-value="9">9</button>
+            <button type="button" class="nps-btn" data-value="10">10</button>
+          </div>
+          <input type="hidden" id="nps">
+        </div>
+
+        <!-- P9: Comentarios -->
+        <div class="form-group">
+          <label class="question-label" for="comentario">
+            9. Sugerencias y comentarios <span class="optional">(opcional)</span>
+          </label>
+          <textarea id="comentario" class="textarea-field" rows="4"
+            placeholder="Escribe aquí tus comentarios o sugerencias..."></textarea>
+        </div>
+
+        <p id="error-msg" class="error-msg" style="display:none"></p>
+
+        <button type="submit" class="btn-submit">ENVIAR</button>
+      </form>
+    </main>
+
+    <footer class="survey-footer">
+      <p>MIZAKI · Restaurante Fusión Japonesa</p>
+    </footer>
+  </div>
+
+  <script src="assets/survey.js"></script>
+</body>
+</html>
