@@ -59,7 +59,9 @@ document.getElementById('survey-form').addEventListener('submit', async e => {
     porcion:    document.getElementById('porcion').value,
     precios:    document.getElementById('precios').value,
     nps:        document.getElementById('nps').value,
-    comentario: document.getElementById('comentario').value.trim()
+    comentario: document.getElementById('comentario').value.trim(),
+    nombre:     document.getElementById('nombre').value.trim(),
+    correo:     document.getElementById('correo').value.trim()
   };
 
   const required = [
@@ -72,6 +74,8 @@ document.getElementById('survey-form').addEventListener('submit', async e => {
     [data.porcion,   'Califica el tamaño de la porción'],
     [data.precios,   'Califica los precios'],
     [data.nps,       'Indica qué tan probable es que nos recomiendes'],
+    [data.nombre,    'Escribe tu nombre completo para obtener el descuento'],
+    [data.correo,    'Escribe tu correo electrónico para obtener el descuento'],
   ];
 
   const failed = required.find(([val]) => !val);

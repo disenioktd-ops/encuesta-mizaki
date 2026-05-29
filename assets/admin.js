@@ -140,6 +140,8 @@ function renderTable(data) {
   tbody.innerHTML = [...data].reverse().map(r => `
     <tr class="response-row" onclick="toggleDetail(this)">
       <td>${formatDate(r.timestamp)}</td>
+      <td>${escapeHtml(r.nombre || '—')}</td>
+      <td>${escapeHtml(r.correo || '—')}</td>
       <td>${escapeHtml(r.sucursal)}</td>
       <td>${escapeHtml(r.visitas)}</td>
       <td>${r.espera}</td>
@@ -153,7 +155,7 @@ function renderTable(data) {
     </tr>
     ${r.comentario ? `
     <tr class="detail-row" style="display:none">
-      <td colspan="11" class="detail-content"><strong>Comentario:</strong> ${escapeHtml(r.comentario)}</td>
+      <td colspan="13" class="detail-content"><strong>Comentario:</strong> ${escapeHtml(r.comentario)}</td>
     </tr>` : ''}
   `).join('');
 }

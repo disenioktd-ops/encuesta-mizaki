@@ -150,9 +150,23 @@
             placeholder="Escribe aquí tus comentarios o sugerencias..."></textarea>
         </div>
 
+        <!-- Descuento 5% -->
+        <div class="form-group discount-group">
+          <div class="discount-badge">🎁 5% de descuento en tu próxima visita</div>
+          <p class="discount-text">Déjanos tus datos y te daremos un cupón de descuento para tu próxima visita.</p>
+
+          <label class="question-label" for="nombre">Tu nombre completo</label>
+          <input type="text" id="nombre" class="input-field"
+            placeholder="Nombre y apellido" autocomplete="name">
+
+          <label class="question-label" for="correo" style="margin-top:16px">Tu correo electrónico</label>
+          <input type="email" id="correo" class="input-field"
+            placeholder="correo@ejemplo.com" autocomplete="email">
+        </div>
+
         <p id="error-msg" class="error-msg" style="display:none"></p>
 
-        <button type="submit" class="btn-submit">ENVIAR</button>
+        <button type="submit" class="btn-submit">ENVIAR Y OBTENER DESCUENTO</button>
       </form>
     </main>
 
