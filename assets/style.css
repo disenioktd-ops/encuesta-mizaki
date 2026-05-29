@@ -44,7 +44,7 @@ body {
   margin-bottom: 20px;
 }
 
-.logo { height: 180px; width: auto; display: block; }
+.logo { width: 85%; max-width: 480px; height: auto; display: block; margin: 0 auto; }
 
 .tagline {
   font-size: 1.25rem;
