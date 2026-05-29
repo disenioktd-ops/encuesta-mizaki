@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBzuE6Gx1XZcetTpRUhh-Na_JcQnRgJuLzhcJlWCVqemFLBwWHarbA-mL9l_sdQBN5/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw96vWwqSPaNxvrIf34vMYX7D4W5ukyJh6Mpg9NrUl4LXj0y-3YmtiRxyChJRJquKp_/exec';
 const ADMIN_PASSWORD = 'Mizaki2026!';
 
 let allData = [];
