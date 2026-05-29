@@ -276,6 +276,17 @@ body {
 .thanks-content h1 { font-size: 1.75rem; font-weight: 900; margin-bottom: 12px; }
 .thanks-content p { color: var(--muted); margin-bottom: 8px; }
 .subtext { font-style: italic; }
+.discount-notice {
+  background: rgba(243,3,62,.08);
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin: 20px 0;
+  max-width: 360px;
+}
+.discount-icon { font-size: 1.5rem; display: block; margin-bottom: 6px; }
+.discount-notice strong { display: block; font-size: 1rem; margin-bottom: 6px; color: var(--text); }
+.discount-notice p { font-size: .85rem; color: var(--muted); margin: 0; }
 
 /* === Admin === */
 .admin-body { background: #0a0a0a; }
