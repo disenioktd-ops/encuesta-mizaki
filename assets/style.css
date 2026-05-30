@@ -220,6 +220,13 @@ body {
   font-size: .9rem;
   margin-bottom: 16px;
 }
+.discount-terms {
+  font-size: .75rem;
+  color: var(--muted);
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-style: italic;
+}
 
 /* === Error === */
 .error-msg {
